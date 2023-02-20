@@ -42,13 +42,13 @@ find_package(${QT_VERSIONED_PREFIX} OPTIONAL_COMPONENTS Network Quick Gui CONFIG
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ${${QT_VERSIONED_PREFIX}_POSITION_INDEPENDENT_CODE})
 if(UNIX)
     if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
         # using Clang
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-pessimizing-move -Wno-mismatched-tags -Wno-unused-private-field -Wno-self-assign-overloaded")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-pessimizing-move -Wno-mismatched-tags -Wno-unused-private-field -Wno-self-assign-overloaded -Wno-unused-lambda-capture")
     elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
         # using GCC
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-error=deprecated-declarations")
